@@ -1,0 +1,45 @@
+screen.height = 700
+screen.width = 1000;
+
+
+carta.width =90
+carta.height = 120
+{
+	
+	//name
+	name.x = 5
+	name.y = 113
+	name.width = 75
+	name.height = 5
+	//fota
+	fota.width = 80
+	fota.height = 50
+	fota.x = 5
+	fota.y = 62
+	//manaCost
+	manaCost.radius = 6
+	manaCost.x = 81
+	manaCost.y = 113
+	//cardTypeText
+	cardTypeText.width=80
+	cardTypeText.height=6
+	cardTypeText.x=5
+	cardTypeText.y=53
+	//description
+	description.x= 5
+	description.y = 10
+	description.width = 80
+	description.height = 40
+	//power
+	power.x = 52
+	power.y = 2
+	power.height = 32 
+	power.width = 6
+	
+}
+
+https://accountname@bitbucket.org/accountname/reponame.git
+git remote add origin ssh://git@bitbucket.org/macknighter/brbois.git
+git remote set-url origin https://macknighter@bitbucket.org/macknighter/brbois.git
+git config --global user.name "macknighter"
+git config --global user.email "macknighter@gmail.com"
