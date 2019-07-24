@@ -85,6 +85,7 @@ public class PlayScreen implements Screen, InputProcessor {
                     JSONObject json = new JSONObject(data);
                     Gdx.app.log("SocketIO", "CardPlaced");
                     Gdx.app.log("cardName & pos: ", data);
+                    placeEnemyCard(json);
                     printJson(json);
 
                 } catch (JSONException e) {
@@ -95,6 +96,8 @@ public class PlayScreen implements Screen, InputProcessor {
         });
 
     }
+
+
 
     private void printJson(JSONObject json) {
         Iterator<String> keys = json.keys();
@@ -413,6 +416,11 @@ public class PlayScreen implements Screen, InputProcessor {
         }
     }
 
+    private void placeEnemyCard(JSONObject json) {
+
+
+    }
+
     private boolean placeCard( BattleField b) {
         if(current instanceof CreatureCard) {
             CreatureCard currentCreature = (CreatureCard) current;
@@ -446,10 +454,16 @@ public class PlayScreen implements Screen, InputProcessor {
         }
     }
 
+    /**
+     *
+     * @param b
+     * @param currentCreature
+     *
+     * Send the data of the card just place to the server.
+     */
     private void sendPlaceCardToServer(BattleField b, CreatureCard currentCreature) {
         String position = b.getBoardPlace().name();
         String cardId = currentCreature.getName();
-        String cardAndPosition = "{ \" position:\"" +  position + "\""+ "," + "\"cardName\":"  + cardId + "\"}";
 
         try {
             String jsonString = new JSONObject()
